@@ -1,0 +1,11 @@
+Path 3 v1
+- Left studio pane and assistant promo are now separate vertical zones.
+- Center canvas frame removed. Cards render directly over wallpaper in PreviewPane.
+- Desktop and mobile renderers are split:
+  - src/ui/components/PreviewPane.tsx
+  - src/mobile/components/MobilePreviewPane.tsx
+- Mobile deployment specs are split:
+  - functions/api/deploy.js
+  - functions/api/deploy-mobile.js
+  - tenants/<slug>/desktop/*
+  - tenants/<slug>/mobile/*
