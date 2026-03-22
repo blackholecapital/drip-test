@@ -1,9 +1,21 @@
 {
   "skinId": "skin-002",
-  "status": "reserved",
+  "name": "Aggressive Web3 Overlay",
+  "status": "active",
   "codes": {
     "wallpaper": "WP-002",
     "cardSkin": "CS-002",
     "uiTheme": "UI-002"
-  }
+  },
+  "assets": {
+    "overlays": {
+      "nav": "/theme-packs/skin-002/overlays/nav-frame.svg",
+      "centerBrand": "/theme-packs/skin-002/overlays/center-brand.svg",
+      "panel": "/theme-packs/skin-002/overlays/panel-frame.svg",
+      "canvasHeader": "/theme-packs/skin-002/overlays/canvas-header-frame.svg",
+      "promo": "/theme-packs/skin-002/overlays/promo-frame.svg",
+      "button": "/theme-packs/skin-002/overlays/button-pill.svg"
+    }
+  },
+  "notes": "Outer chrome only. No wallpaper or workspace/card content changes."
 }
