@@ -1,0 +1,136 @@
+/* === UI PATCH: floating canvas strip + wallpaper + ad slot + fixed modals === */
+.canvasStrip{
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0 0 8px 0;
+}
+.canvasStrip .panelHeader{
+  background: rgba(0,0,0,.22);
+  border: none;
+  border-radius: 12px;
+}
+
+.previewShell.floating{ border: none; background:transparent; box-shadow: none; }
+.previewCanvas.floating{
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 160px);
+  aspect-ratio: auto;
+  overflow: visible;
+  background: transparent;
+}
+
+/* Preview modal uses studio wallpaper; keep inner area readable */
+.previewModalBody{ padding: 0; }
+.previewModalInner{ padding: 12px; }
+
+/* Ensure previewPane doesn't inject its own background image in preview modal */
+.previewModalBody .previewCanvas.single{ background-image: none; background: transparent; }
+
+/* Templates modal: tabs in header, body scroll, fixed size */
+.modalCardWide{
+  min-height: 560px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+.modalCardSide{
+  width: 540px;
+  min-height: 420px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+.modalBody{
+  flex: 1;
+  overflow: auto;
+}
+.templateTabsInline{
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.templateTabsInline .segBtn{ height: 32px; }
+
+/* Dark dropdown menu/options */
+.cardSelect, .layoutSelect{
+  background: rgba(0,0,0,.55);
+  color: rgba(255,255,255,.92);
+  border: none;
+}
+.cardSelect option, .layoutSelect option{
+  background: #0b0b0b;
+  color: #ffffff;
+}
+
+/* Fixed AD slot: bottom-left, square, wide toward canvas */
+:root{
+  --adSlotW: min(560px, 36vw);
+  --adSlotH: min(260px, 28vh);
+}
+.adSlotFixed{
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  width: var(--adSlotW);
+  height: var(--adSlotH);
+  z-index: 5;
+  border-radius: 14px;
+  border: none;
+  background: rgba(0,0,0,.18);
+  backdrop-filter: blur(12px);
+  box-shadow: none;
+}
+
+.adSlotImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
+
+/* Gate editor should not expand below AD SLOT top */
+.accordionBody{
+  max-height: calc(100vh - var(--adSlotH) - 240px);
+  overflow: auto;
+}
+
+/* Keep left pane clear above the fixed AD slot (prevents overlap) */
+.leftPane{
+  padding-bottom: calc(var(--adSlotH) + 24px);
+}
+
+
+/* Mini tabs: keep Collapse to the right of Scraper on the same row */
+.accordionMiniTabs{ align-items:center; }
+.accordionCollapseBtn{ margin-left: 10px; white-space: nowrap; }
+
+/* Stack Card + Layout selects */
+.selectStack{ display:flex; flex-direction:column; gap:8px; min-width: 130px; }
+.cardSelectInline{ min-width: 110px; }
+.layoutSelect{ min-width: 150px; }
+
+/* Line alignment controls */
+.fieldLabel{ display:flex; align-items:center; gap: 10px; justify-content:flex-start; }
+.alignBtns{ display:flex; gap:6px; }
+.alignBtn{
+  border: none;
+  background: rgba(0,0,0,.18);
+  color: rgba(255,255,255,.85);
+  border-radius: 8px;
+  padding: 2px 6px;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+}
+.alignBtn.active{
+  border-color: rgba(120,255,180,.35);
+  background: rgba(40,160,90,.18);
+}
+.previewCardBody{ display:flex; flex-direction:column; gap:4px; }
+.previewLine{ white-space: pre-wrap; }

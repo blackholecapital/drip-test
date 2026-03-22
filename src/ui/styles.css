@@ -1,0 +1,8 @@
+/* Drip Studio CSS entry (split for maintainability)
+   Keep import order deterministic to avoid UI regressions. */
+@import "./styles/legacy-base.css";
+@import "./styles/v2-polish.css";
+@import "./styles/ui-patch.css";
+@import "./styles/skin-001.css";
+@import "./styles/repair.css";
+@import "./styles/path3.css";

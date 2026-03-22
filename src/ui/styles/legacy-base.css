@@ -1,0 +1,92 @@
+/* (Same CSS I described earlier) */
+html, body, #root{ height:100%; overflow:hidden; }
+
+:root{
+  --bg: #0a0c10;
+  --panel: rgba(20, 22, 28, .88);
+  --border: none;
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.68);
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{ margin:0; font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); }
+.appRoot{ min-height:100vh; }
+.topBar{ position:sticky; top:0; z-index:10; display:flex; align-items:center; gap:14px; padding:12px 14px; border-bottom:1px solid var(--border); background:rgba(10,12,16,.92); backdrop-filter:blur(10px); }
+.brand{ font-weight:900; letter-spacing:.2px; font-size:18px; min-width:150px; }
+.topFields{ display:flex; align-items:center; gap:12px; flex:1; }
+.topField{ display:flex; flex-direction:column; gap:6px; min-width:220px; }
+.topField.grow{ flex:1; min-width:260px; }
+.topLabel{ font-size:12px; color:var(--muted); }
+.topInput{ height:36px; border-radius:10px; border: none; background:rgba(255,255,255,.06); color:var(--text); padding:0 10px; outline: none; }
+.topActions{ display:flex; gap:10px; align-items:center; }
+.btn,.btnSecondary,.btnPrimary{ height:36px; padding:0 12px; border-radius:10px; border: none; background:rgba(255,255,255,.08); color:var(--text); cursor:pointer; font-weight:800; }
+.btnPrimary{ background:rgba(61,130,246,.22); border-color:rgba(61,130,246,.38); }
+.btnSecondary{ background:rgba(255,255,255,.06); }
+.body{ padding:14px; height: calc(100vh - 64px); overflow: hidden; }
+.tabsRow{ display:flex; gap:10px; padding:0 0 12px 0;  flex: 1; }
+.tabBtn{ height:34px; padding:0 14px; border-radius:10px 10px 0 0; border: none; background:rgba(255,255,255,.05); color:rgba(255,255,255,.82); cursor:pointer; font-weight:900; }
+.tabBtn.active{ background:rgba(46,204,113,.18); border-color:rgba(46,204,113,.38); color:rgba(255,255,255,.92); }
+.contentGrid{ display:grid; grid-template-columns:520px 1fr; gap:14px; align-items:start; }
+.panel{ background:rgba(20,22,28,.88); border: none; border-radius:var(--radius); box-shadow: none; overflow:hidden; }
+.panelHeader{ padding:12px 14px; border-bottom:1px solid rgba(255,255,255,.06); }
+.panelTitle{ font-weight:900; }
+.panelSub{ margin-top:4px; font-size:12px; color:var(--muted); }
+.panelFooter{ padding:12px 14px; border-top:1px solid rgba(255,255,255,.06); }
+.accordionStack{ padding:10px; display:grid; gap:10px; }
+.accordionItem{ border: none; border-radius:12px; background:rgba(0,0,0,.18); overflow:hidden; }
+.accordionHeader{ width:100%; display:flex; justify-content:space-between; align-items:center; padding:12px; background:transparent; border: none; color:var(--text); cursor:pointer; }
+.accordionTitle{ font-weight:900; }
+.accordionSub{ font-size:12px; color:var(--muted); }
+.accordionTop{ padding:10px 12px 0; }
+.accordionMiniTabs{ display:flex; gap:8px; flex-wrap:wrap; padding-bottom:10px; }
+.miniTab{ padding:6px 10px; border-radius:999px; border: none; background:rgba(0,0,0,.18); color:var(--text); font-size:12px; cursor:pointer; }
+.miniTab.active{ border-color:rgba(255,255,255,.28); background:rgba(255,255,255,.06); }
+.accordionHeaderRow{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding-bottom:10px; }
+.cardSelect{ appearance:none; padding:10px 12px; border-radius:12px; border: none; background:rgba(0,0,0,.18); color:var(--text); font-size:14px; min-width:140px; }
+.accordionCollapseBtn{ padding:10px 12px; border-radius:12px; border: none; background:rgba(0,0,0,.18); color:var(--text); cursor:pointer; font-size:13px; }
+.accordionTitleRow{ display:flex; align-items:center; gap:10px; }
+.accordionBody{ padding:10px 12px 12px; border-top:1px solid rgba(255,255,255,.06); }
+.fieldGrid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+.field{ display:flex; flex-direction:column; gap:6px; }
+.fieldLabel{ font-size:12px; color:var(--muted); }
+.fieldInput{ height:34px; border-radius:10px; border: none; background:rgba(255,255,255,.06); color:var(--text); padding:0 10px; outline: none; }
+.layoutRow{ display:flex; align-items:center; justify-content:space-between; padding:10px 14px; border-bottom:1px solid rgba(255,255,255,.06); }
+.layoutLabel{ font-size:12px; color:var(--muted); font-weight:900; }
+.layoutBtns{ display:flex; gap:8px; }
+.layoutBtn{ width:34px; height:34px; border-radius:10px; border: none; background:rgba(255,255,255,.06); color:var(--text); cursor:pointer; font-weight:900; }
+.layoutBtn.active{ background:rgba(46,204,113,.18); border-color:rgba(46,204,113,.38); }
+.previewSplit{ display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:12px 14px; }
+.previewShell{ border-radius:12px; overflow:hidden; border: none; background:transparent; }
+.previewShell{ border-radius:12px; overflow:hidden; border: none; }
+.previewCanvas{ position:relative; width:100%; aspect-ratio:14/9; overflow:hidden; background-size:cover; background-position:center; }
+.previewCanvas.top{ background-image:url("/placeholders/black-canvas.jpg"); }
+.previewCanvas.bottom{ background-image:url("/skins/skin-sample.jpg"); }
+.previewCard{ position:absolute; border-radius:14px; border: none; background:rgba(0,0,0,.40); box-shadow: none; overflow:hidden; }
+.previewCardInner{ padding:12px; }
+.previewCardNum{ position:absolute; top:10px; right:10px; width:26px; height:26px; border-radius:999px; display:grid; place-items:center; background:rgba(255,255,255,.12); border: none; font-weight:900; font-size:12px; }
+.previewCardTitle{ font-weight:900; margin-bottom:6px; font-size:13px; }
+.previewCardBody{ margin:0; white-space:pre-wrap; color:rgba(255,255,255,.75); font-size:12px; line-height:1.35; 
+  position:relative;
+  height:100%;
+}
+.previewImage{ width:100%; height:100%; object-fit:contain; border-radius:12px; }
+.split2{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.textarea{ width:100%; min-height:280px; border-radius:12px; border: none; background:rgba(255,255,255,.06); color:var(--text); padding:10px; outline: none; resize:vertical; }
+.codebox{ width:100%; min-height:280px; border-radius:12px; border: none; background:rgba(0,0,0,.25); color:rgba(255,255,255,.86); padding:10px; overflow:auto; }
+.formRow{ display:flex; gap:12px; align-items:flex-end; padding:12px 14px; }
+.btnRow{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+.note{ margin:14px; padding:14px; border: none; border-radius:12px; background:rgba(0,0,0,.18); }
+.noteTitle{ font-weight:900; margin-bottom:6px; }
+.noteBody{ color:var(--muted); }
+.muted{ color:var(--muted); font-size:12px; }
+@media (max-width:1100px){ .contentGrid{ grid-template-columns:1fr; } .previewSplit{ grid-template-columns:1fr; } }
+
+
+.tabsBar{ display:flex; align-items:flex-end; justify-content:space-between; gap:12px; }
+
+.layoutBtnsTop{ display:flex; gap:8px; padding-bottom:12px; margin-left:auto; }
+
+.previewCanvas.single { background-image: url("/skins/skin-sample.jpg") !important; background-size: cover; background-position: center; min-height:70vh; height: calc(100vh - 210px); }

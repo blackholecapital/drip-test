@@ -1,0 +1,297 @@
+/* --- Drip Studio v2.1 polish --- */
+.brand{ display:flex; align-items: baseline; gap: 10px; font-weight: 900; }
+.brandName{ font-size: 18px; font-weight: 900; }
+.brandVer{
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.82);
+}
+
+.savedPill{
+  font-size: 12px;
+  font-weight: 900;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(46, 204, 113, .16);
+  color: rgba(255,255,255,.92);
+}
+.savedPill.off{
+  border-color: rgba(231, 76, 60, .35);
+  background: rgba(231, 76, 60, .14);
+  color: rgba(255,255,255,.86);
+}
+
+.btnSave{
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(46, 204, 113, .22);
+  color: rgba(255,255,255,.92);
+  cursor:pointer;
+  font-weight: 900;
+}
+
+.btnReset{
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,.10);
+  color: rgba(255,255,255,.90);
+  cursor:pointer;
+  font-weight: 900;
+}
+
+.btnDeploy{
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(231, 76, 60, .22);
+  color: rgba(255,255,255,.92);
+  cursor:pointer;
+  font-weight: 900;
+}
+.btnDeploy.disabled{ opacity: .55; cursor: not-allowed; }
+.btnDeploy:not(.disabled){
+  border-color: rgba(46, 204, 113, .45);
+  background: rgba(46, 204, 113, .22);
+}
+
+.panelHeaderTight{ padding: 10px 12px; }
+.leftHeaderRow{ display:flex; align-items:center; justify-content: space-between; gap: 10px; }
+.collapsePaneBtn{
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.9);
+  cursor:pointer;
+  font-weight: 900;
+}
+.tabsInPanel .tabsRow{ padding-bottom: 0; margin-top: 10px; }
+
+.contentGrid.collapsed{ grid-template-columns: 62px 1fr; }
+.leftPane.collapsed{ overflow: hidden; }
+.leftPane.collapsed .panelHeader{ padding: 10px; }
+.leftPane.collapsed .panelSub,
+.leftPane.collapsed .tabsInPanel,
+.leftPane.collapsed .demoLinksBox{ display:none; }
+.collapsedHint{ padding: 10px; font-size: 12px; color: rgba(255,255,255,.6); }
+
+.demoLinksBox{ margin-top: 10px; border-top: 1px solid rgba(255,255,255,.06); padding-top: 10px; }
+.demoLinksTitle{ font-size: 12px; font-weight: 900; color: rgba(255,255,255,.82); }
+.demoLinksList{ display:flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.demoLink{
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  text-decoration: none;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.canvasHeader{ display:flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.canvasHeaderRight{ display:flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+.modalOverlay{
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.58);
+  display: grid;
+  place-items: center;
+  z-index: 50;
+  padding: 18px;
+}
+.modalCard{
+  width: min(1100px, 96vw);
+  max-height: 86vh;
+  overflow: hidden;
+  border-radius: 18px;
+  border: none;
+  background: rgba(20, 22, 28, .92);
+  box-shadow: none;
+}
+.modalCardWide{ width: min(1300px, 96vw); }
+.modalCardFull{ width: min(1400px, 98vw); max-height: 92vh; }
+.modalHeader{
+  display:flex; align-items:center; justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.modalTitle{ font-weight: 900; }
+.modalClose{
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.9);
+  cursor:pointer;
+  font-weight: 900;
+}
+.modalBody{ padding: 14px; overflow:auto; max-height: calc(86vh - 60px); }
+
+.segRow{ display:flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.fontToolsRow{ display:flex; align-items:flex-end; gap: 10px; flex-wrap: wrap; }
+.fontSizeBox,.fontTargetBox{ display:flex; flex-direction:column; gap:4px; }
+.fontSizeInput{
+  width: 70px;
+  height: 32px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  padding: 0 10px;
+}
+.fontSizeRange{ width: 220px; }
+.fontTargetSelect{
+  height: 32px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  padding: 0 10px;
+}
+.fontDecorBtns{ display:flex; gap: 8px; }
+.fontPreviewSentence{
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(0,0,0,.16);
+  color: rgba(255,255,255,.92);
+}
+
+.segBtn{
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.88);
+  cursor:pointer;
+  font-weight: 900;
+  font-size: 12px;
+}
+.segBtn.active{
+  border-color: rgba(46, 204, 113, .45);
+  background: rgba(46, 204, 113, .22);
+  color: rgba(255,255,255,.92);
+}
+
+.templateGridV21{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, 220px);
+  gap: 10px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.templateTabsRow{ display:flex; gap: 8px; flex-wrap:wrap; margin-bottom: 12px; }
+.optionGrid{ display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; justify-items:center; align-items:start; }
+.optionTile{ text-align:left; padding:14px; border-radius:14px; border: none; background:rgba(0,0,0,.18); color:var(--text); cursor:pointer; }
+.optionTileWallpaper{ display:flex; flex-direction:column; gap:10px; }
+.wallpaperThumb{ width:100%; height:140px; border-radius:12px; border: none; background-size:cover; background-position:center; background-color: rgba(255,255,255,.06); }
+.templateGridV21.blocksOnly{ padding-top: 6px; }
+.templateTileV21.blocksOnly{ padding:10px; }
+.templateTileV21.blocksOnly .templateMetaRow{ display:none; }
+.optionTitle{ font-weight:700; }
+.optionSub{ font-size:12px; color:var(--muted); margin-top:4px; }
+.optionThumbSm{ margin-top:10px; height:86px; border-radius:12px; background-size:cover; background-position:center; border: none; }
+.templateTileV21{
+  text-align:left;
+  padding: 10px;
+  width: 220px;
+  max-width: 100%;
+  border-radius: 14px;
+  border: none;
+  background: rgba(0,0,0,.18);
+  color: rgba(255,255,255,.92);
+  cursor:pointer;
+}
+.templateTileV21:hover{ border-color: rgba(46, 204, 113, .35); }
+.templateThumb{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255,255,255,.04);
+  overflow:hidden;
+}
+.thumbBlock{
+  position:absolute;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,.06);
+}
+.templateMetaRow{ display:flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 8px; }
+.templateName{ font-weight: 900; font-size: 12px; }
+.templateMeta{ font-size: 12px; color: rgba(255,255,255,.68); }
+
+.imageGridV21{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 10px;
+}
+.imageTileV21{
+  padding: 10px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(0,0,0,.18);
+  cursor:pointer;
+  color: rgba(255,255,255,.92);
+  text-align:left;
+}
+.imageTileV21:hover{ border-color: rgba(46, 204, 113, .35); }
+.imageThumbV21{
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,.06);
+  background-size: cover;
+  background-position: center;
+}
+.img-A1{ background-image: url("/stickers/A1.png"); }
+.img-A2{ background-image: url("/stickers/A2.png"); }
+.img-A3{ background-image: url("/stickers/A3.png"); }
+
+.kindRow{
+  display:flex; align-items:center; justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.kindLabel{ font-size: 12px; font-weight: 900; color: rgba(255,255,255,.68); }
+.kindBtns{ display:flex; gap: 8px; flex-wrap: wrap; }
+.fontSizeBtns{ display:flex; gap:8px; flex-wrap: wrap; }
+.kindBtn{
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.88);
+  cursor:pointer;
+  font-weight: 900;
+  font-size: 12px;
+}
+.kindBtn.active{
+  border-color: rgba(46, 204, 113, .45);
+  background: rgba(46, 204, 113, .22);
+  color: rgba(255,255,255,.92);
+}
+
+@media (max-width: 1100px){
+  .templateGridV21{ justify-content:center;  grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .imageGridV21{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .contentGrid.collapsed{ grid-template-columns: 1fr; }
+}
